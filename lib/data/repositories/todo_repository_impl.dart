@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
@@ -26,7 +27,12 @@ class TodoRepositoryImpl implements TodoRepository {
   Future<TodoModel> createTodo(TodoModel todoModel) async {
     final Response response = await _dio.post(
       '$_baseUrl/todos',
-      data: todoModel.toJson(),
+      data: {
+        'title': todoModel.title,
+        'subtitle': todoModel.subtitle,
+        'description': todoModel.description,
+        'isDone': todoModel.isDone,
+      },
       options: Options(
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
@@ -54,8 +60,9 @@ class TodoRepositoryImpl implements TodoRepository {
         },
       ),
     );
-    log('update create $response');
-    return TodoModel.fromJson(response.data);
+    log('update create ${response.data.runtimeType}');
+    final todos = response.data;
+    return TodoModel.fromMap(todos);
   }
 
   @override

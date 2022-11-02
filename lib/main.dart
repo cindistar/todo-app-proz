@@ -10,10 +10,9 @@ void main() async {
 
   // await httpClient.createTodo(
   //   TodoModel(
-  //     id: '04',
-  //     title: 'Projeto Karatê',
-  //     subtitle: 'Lutar karatê',
-  //     description: 'Fazer aulas de karatê',
+  //     title: 'Levar pet no vet',
+  //     subtitle: 'Xael',
+  //     description: 'Dar vacina na gata',
   //     isDone: false,
   //   ),
   // );
@@ -21,14 +20,14 @@ void main() async {
   //await httpClient.getTodosList();
 
   // await httpClient.updateTodo(TodoModel(
-  // id: '04',
-  // title: 'Natação',
-  // subtitle: 'Nadar',
-  // description: 'Fazer aulas de natação',
+  // id: '6361e7d475250203e82f36a5',
+  // title: 'Levar pet no vet',
+  // subtitle: 'Xael',
+  // description: 'Dar vacina na gata',
   // isDone: false,
   // ));
 
-  //await httpClient.deleteTodo('6361d17e75250203e82f3679');
+  //await httpClient.deleteTodo('6361dc4875250203e82f3698');
 
   runApp(const MyApp());
 }
