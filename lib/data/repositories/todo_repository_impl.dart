@@ -10,7 +10,7 @@ class TodoRepositoryImpl implements TodoRepository {
 
   TodoRepositoryImpl(this._dio);
 
-  final _baseUrl = 'https://crudcrud.com/api/d672547ec04644fd883bed629fe9a49a';
+  final _baseUrl = 'https://crudcrud.com/api/2f530c951c0d4f418d07bce08ba51572';
 
   @override
   Future<List<TodoModel>> getTodosList() async {
@@ -19,7 +19,7 @@ class TodoRepositoryImpl implements TodoRepository {
     );
     final list = List.from(response.data);
     final result = list.map((e) => TodoModel.fromMap(e)).toList();
-    log('result $result');
+    log('list $result');
     return result;
   }
 
@@ -45,8 +45,8 @@ class TodoRepositoryImpl implements TodoRepository {
   }
 
   @override
-  Future<TodoModel> updateTodo(TodoModel todoModel) async {
-    final Response response = await _dio.put(
+  Future<void> updateTodo(TodoModel todoModel) async {
+    final response = await _dio.put(
       '$_baseUrl/todos/${todoModel.id}',
       data: {
         'title': todoModel.title,
@@ -60,9 +60,8 @@ class TodoRepositoryImpl implements TodoRepository {
         },
       ),
     );
-    log('update create ${response.data.runtimeType}');
-    final todos = response.data;
-    return TodoModel.fromMap(todos);
+    response;
+    log('update ${response.statusCode}');
   }
 
   @override

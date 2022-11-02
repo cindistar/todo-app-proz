@@ -6,7 +6,7 @@ abstract class TodoRepository {
 
   Future<TodoModel> createTodo(TodoModel todoModel);
 
-  Future<TodoModel> updateTodo(TodoModel todoModel);
+  Future<void> updateTodo(TodoModel todoModel);
 
   Future<void> deleteTodo(String todoId);
 }

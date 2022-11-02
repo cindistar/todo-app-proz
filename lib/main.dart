@@ -10,9 +10,9 @@ void main() async {
 
   // await httpClient.createTodo(
   //   TodoModel(
-  //     title: 'Levar pet no vet',
-  //     subtitle: 'Xael',
-  //     description: 'Dar vacina na gata',
+  //     title: 'Compras no shopping',
+  //     subtitle: 'Comprinhas',
+  //     description: 'Comprar roupas e pefume no shopping',
   //     isDone: false,
   //   ),
   // );
@@ -20,9 +20,9 @@ void main() async {
   //await httpClient.getTodosList();
 
   // await httpClient.updateTodo(TodoModel(
-  // id: '6361e7d475250203e82f36a5',
+  // id: '6362a22875250203e82f3986',
   // title: 'Levar pet no vet',
-  // subtitle: 'Xael',
+  // subtitle: 'Aisha',
   // description: 'Dar vacina na gata',
   // isDone: false,
   // ));
